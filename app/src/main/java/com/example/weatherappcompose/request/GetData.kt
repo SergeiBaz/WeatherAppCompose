@@ -1,14 +1,13 @@
 package com.example.weatherappcompose.request
 
 import android.content.Context
-import android.service.controls.actions.ControlAction
 import android.util.Log
 import androidx.compose.runtime.MutableState
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.weatherappcompose.data_storage.WeatherModel
-import com.example.weatherappcompose.screens.processing_request.getWeatherByDays
+import com.example.weatherappcompose.processing_request.getWeatherByDays
 
 const val API_KEY = "e682f29b015d4c35b31163416232404"
 fun getData(

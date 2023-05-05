@@ -1,4 +1,4 @@
-package com.example.weatherappcompose.screens.processing_request
+package com.example.weatherappcompose.processing_request
 
 import com.example.weatherappcompose.data_storage.WeatherModel
 import org.json.JSONObject

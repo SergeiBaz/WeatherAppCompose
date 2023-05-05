@@ -6,15 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.weatherappcompose.list_state.currentDay
+import com.example.weatherappcompose.list_state.dayState
+import com.example.weatherappcompose.request.getData
 import com.example.weatherappcompose.screens.MainCard
 import com.example.weatherappcompose.screens.TabLayout
 import com.example.weatherappcompose.ui.theme.WeatherAppComposeTheme
@@ -24,6 +22,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WeatherAppComposeTheme {
+                val daysList = dayState()
+                val currentDay = currentDay()
+                getData("Sosnovskoye", this, daysList, currentDay)
                 Image(
                     painter = painterResource(id = R.drawable.weather_sunny),
                     contentDescription = "image_fillScreen",
@@ -33,8 +34,8 @@ class MainActivity : ComponentActivity() {
                     contentScale = ContentScale.FillBounds
                 )
                 Column {
-                    MainCard()
-                    TabLayout()
+                    MainCard(currentDay)
+                    TabLayout(daysList)
                 }
 
             }

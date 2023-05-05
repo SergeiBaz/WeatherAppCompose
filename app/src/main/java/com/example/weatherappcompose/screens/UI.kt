@@ -12,11 +12,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.example.weatherappcompose.data_storage.WeatherModel
 import com.example.weatherappcompose.ui.theme.Blue
 
-@Preview(showBackground = true)
+
 @Composable
-fun ListItem() {
+fun ListItem(item: WeatherModel) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -30,20 +31,20 @@ fun ListItem() {
         ) {
             Column(modifier = Modifier.padding(3.dp)) {
                 Text(
-                    text = "12:00",
+                    text = item.time,
                     style = TextStyle(color = Color.DarkGray)
                 )
                 Text(
-                    text = "Sunny",
+                    text = item.condition,
                     style = TextStyle(color = Color.White)
                 )
             }
             Text(
-                text = "25°C",
+                text = item.currentTemp.ifEmpty { "${item.maxTemp}°/${item.minTemp}°" },
                 style = TextStyle(fontSize = 25.sp, color = Color.White)
             )
             AsyncImage(
-                model = "https://cdn.weatherapi.com/weather/64x64/day/122.png",
+                model = "https:${item.icon}",
                 contentDescription = "image_condition_item",
                 modifier = Modifier.size(35.dp)
             )

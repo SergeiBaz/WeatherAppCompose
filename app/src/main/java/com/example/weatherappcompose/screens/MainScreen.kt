@@ -23,7 +23,7 @@ import com.google.accompanist.pager.*
 import kotlinx.coroutines.launch
 
 @Composable
-fun MainCard(currentDay: MutableState<WeatherModel>) {
+fun MainCard(currentDay: MutableState<WeatherModel>,onClickSync: () -> Unit, onClickSearch: () -> Unit) {
     Column(
         modifier = Modifier.padding(5.dp),
     ) {
@@ -68,7 +68,9 @@ fun MainCard(currentDay: MutableState<WeatherModel>) {
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onClickSearch.invoke()
+                    }) {
                         Icon(
                             painter = painterResource(id = R.drawable.im_search),
                             contentDescription = "image_search",
@@ -78,7 +80,9 @@ fun MainCard(currentDay: MutableState<WeatherModel>) {
                     Text(
                         text = "${currentDay.value.maxTemp}°C/${currentDay.value.minTemp}°C", style = TextStyle(fontSize = 16.sp, color = Color.White)
                     )
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = {
+                        onClickSync.invoke()
+                    }) {
                         Icon(
                             painter = painterResource(id = R.drawable.im_sync),
                             contentDescription = "image_sync",

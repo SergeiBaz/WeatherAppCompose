@@ -4,11 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import com.example.weatherappcompose.MainActivity
 import com.example.weatherappcompose.data_storage.WeatherModel
-import com.example.weatherappcompose.request.getData
-import com.example.weatherappcompose.screens.DialogSearch
-
 @Composable
 fun dayState(): MutableState<List<WeatherModel>> {
     val daysList = remember{

@@ -1,6 +1,6 @@
 package com.example.weatherappcompose.di
 
-import com.example.weatherappcompose.data.remote.ApiService
+import com.example.weatherappcompose.data.network.ApiService
 import com.example.weatherappcompose.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object RetrofitModule {
 
     @Provides
     @Singleton

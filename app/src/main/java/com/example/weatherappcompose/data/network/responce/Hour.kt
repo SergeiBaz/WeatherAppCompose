@@ -1,5 +1,8 @@
-package com.example.weatherappcompose.data.remote.responce
+package com.example.weatherappcompose.data.network.responce
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Hour(
     val chance_of_rain: Int,
     val chance_of_snow: Int,

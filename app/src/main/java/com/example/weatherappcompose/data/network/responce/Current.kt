@@ -1,5 +1,8 @@
-package com.example.weatherappcompose.data.remote.responce
+package com.example.weatherappcompose.data.network.responce
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Current(
     val cloud: Int,
     val condition: Condition,

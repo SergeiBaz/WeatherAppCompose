@@ -1,5 +1,8 @@
-package com.example.weatherappcompose.data.remote.responce
+package com.example.weatherappcompose.data.network.responce
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Forecastday(
     val astro: Astro,
     val date: String,

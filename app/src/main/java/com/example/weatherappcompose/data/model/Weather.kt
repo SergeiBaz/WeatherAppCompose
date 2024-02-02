@@ -1,5 +1,7 @@
 package com.example.weatherappcompose.data.model
 
+import com.example.weatherappcompose.data.network.responce.Respose
+
 data class Weather(
     val name: String,
     val timeLastUpdated: String,

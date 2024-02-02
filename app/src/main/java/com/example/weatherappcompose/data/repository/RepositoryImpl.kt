@@ -1,12 +1,12 @@
 package com.example.weatherappcompose.data.repository
 
-import com.example.weatherappcompose.data.model.WeatherDay
 import com.example.weatherappcompose.data.model.Weather
-import com.example.weatherappcompose.data.model.WeatherHour
 import com.example.weatherappcompose.data.network.ApiService
+import com.example.weatherappcompose.data.network.responce.mappers.toDomain
 
 class RepositoryImpl(private val api: ApiService): Repository {
-    override suspend fun getListWeather(): List<Weather> = api.getWeatherList().map{items->
+    override suspend fun getWeather(): Weather = api.getWeatherList().toDomain()
+    /*.map{items->
         Weather(
             name = items.location.name,
             timeLastUpdated = items.current.last_updated,
@@ -32,5 +32,5 @@ class RepositoryImpl(private val api: ApiService): Repository {
                 }
             }
         )
-    }
+    }*/
 }

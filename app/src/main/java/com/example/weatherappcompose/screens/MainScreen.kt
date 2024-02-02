@@ -14,9 +14,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import com.example.weatherappcompose.R
 import com.example.weatherappcompose.data_storage.WeatherModel
+import com.example.weatherappcompose.presentation.viewmodel.WeatherViewModel
 import com.example.weatherappcompose.processing_request.getWeatherByHours
 import com.example.weatherappcompose.ui.theme.Blue
 import com.google.accompanist.pager.*
@@ -24,6 +26,8 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun MainCard(currentDay: MutableState<WeatherModel>,onClickSync: () -> Unit, onClickSearch: () -> Unit) {
+    val weatherViewModel = hiltViewModel<WeatherViewModel>()
+    weatherViewModel.getListNews()
     Column(
         modifier = Modifier.padding(5.dp),
     ) {

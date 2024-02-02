@@ -19,7 +19,7 @@ class WeatherViewModel @Inject constructor(
         private set
 
 
-    fun getListNews() {
+    fun getListWeather() {
         viewModelScope.launch {
             weathersUiState = WeathersUiState.Loading
             weathersUiState =

@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.weatherappcompose.data.model.Weather
 import com.example.weatherappcompose.presentation.screens.uiComponent.WeathersGridScreen
-import com.example.weatherappcompose.presentation.viewmodel.WeathersUiState
+import com.example.weatherappcompose.presentation.state.WeathersUiState
 
 @Composable
 fun HomeScreen(

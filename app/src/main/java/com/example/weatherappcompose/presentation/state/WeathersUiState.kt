@@ -1,4 +1,4 @@
-package com.example.weatherappcompose.presentation.viewmodel
+package com.example.weatherappcompose.presentation.state
 
 import com.example.weatherappcompose.data.model.Weather
 
